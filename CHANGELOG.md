@@ -1,3 +1,12 @@
+# Release v1.1.5 - 2026-03-01
+
+## Improvements
+- Renamed extension from Bolt to BoltS across code, docs, and UI.
+- Configuration key changed from `bolt.scripts` to `bolts.scripts`; existing users must update their settings.
+- Version set to 1.1.5; README, OVERVIEW, and CHANGELOG updated for consistent branding.
+
+---
+
 # Release v1.1.2 - 2026-03-01
 
 ## New Features
