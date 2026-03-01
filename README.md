@@ -1,11 +1,36 @@
-# Bolt
+<div align="center">
+  <h1>Bolt [Beta]</h1>
+  <p><strong>The Lightning-Fast Script Launcher</strong></p>
+</div>
 
-**Bolt** is a VS Code extension that puts a script launcher in your status bar. One click opens a searchable menu of your scripts; pick one and it runs in the integrated terminal.
+Tired of memorizing script paths or switching to a terminal to run them? Bolt pins a Script Menu to your status bar—one click, pick a script by alias, and it runs in the integrated terminal.
 
-## Setup
+## What is Bolt?
 
-1. Open the project in VS Code and press **F5** to launch the Extension Development Host.
-2. In settings, add your scripts under **Bolt: Scripts** (`bolt.scripts`), for example:
+Bolt is a VS Code extension that gives you one-click access to your shell scripts. Configure a list of scripts (with friendly aliases and paths) in settings; click **Bolt** in the status bar to open a searchable Quick Pick menu and run any script in the integrated terminal.
+
+## Why Use Bolt?
+
+- **Aliases**: Use names like "Reset DB" or "Deploy" instead of remembering full paths
+- **Global Access**: Run scripts outside your workspace (e.g. `~/scripts/backup.sh`) as well as project-local ones
+- **Zero-Clutter UI**: Stays in the status bar until you need it—no panels or sidebars
+- **Path Flexibility**: Paths can be workspace-relative (`./scripts/...`), home-relative (`~/scripts/...`), or absolute
+- **Visible Output**: Scripts run in the integrated terminal so you see output and can interact if the script prompts for input
+- **Searchable Menu**: Quick Pick lets you type to filter scripts by alias
+
+## Getting Started
+
+### Installation
+
+1. Open VS Code or Cursor
+2. Go to the Extensions view
+3. Search for **Bolt**
+4. Click Install
+
+### First Steps
+
+1. **Open Settings** and find **Bolt: Scripts** (`bolt.scripts`), or add to your `settings.json`:
+2. Add script entries with an **alias** (display name) and **path** (script location):
 
 ```json
 "bolt.scripts": [
@@ -14,11 +39,51 @@
 ]
 ```
 
-- **alias** — Label shown in the menu.
-- **path** — Script location: `./` = workspace-relative, `~` = home directory, or an absolute path.
+3. **Click the Bolt icon** (⚡) in the status bar
+4. **Pick a script** from the Quick Pick list—it runs in a new **Bolt** terminal
 
-## Usage
+## How It Works
 
-Click **$(zap) Bolt** in the status bar, choose a script from the Quick Pick list, and it runs in a new Bolt terminal.
+### Path Resolution
 
-See [docs/OVERVIEW.md](docs/OVERVIEW.md) for the full spec and development overview.
+- **`./path`** – Relative to the workspace root (or home if no folder is open)
+- **`~/path`** – Relative to your home directory (Mac, Linux, Windows)
+- **`/path`** or **`C:\path`** – Absolute path, used as-is
+
+### Settings
+
+Configure scripts in **Bolt: Scripts** (`bolt.scripts`). Each entry has:
+
+- **alias** – Label shown in the menu (e.g. "Reset DB", "Deploy")
+- **path** – Path to the script using the rules above
+
+If the resolved path does not exist, Bolt shows an error and does not run the script.
+
+## Development
+
+```bash
+npm install
+npm run compile
+```
+
+Press **F5** to launch the Extension Development Host.
+
+## Support the Project
+
+If Bolt helps your workflow, you can support the project (no pressure):
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/igobinda)
+
+## Need Help?
+
+- **Overview**: See [docs/OVERVIEW.md](docs/OVERVIEW.md) for the full spec and development overview
+- **Issues**: Found a bug or have an idea? Open an issue on GitHub
+- **Repository**: [github.com/iNandi/bolt](https://github.com/iNandi/bolt)
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+**Made with ❤️ by Gobinda Nandi**
