@@ -1,0 +1,73 @@
+{
+  "name": "bolts",
+  "displayName": "BoltS",
+  "description": "Lightning-fast script launcher. Pin a Script Menu to the status bar for one-click access to your scripts.",
+  "version": "1.1.5",
+  "publisher": "iNandi",
+  "author": {
+    "name": "Gobinda Nandi",
+    "email": "gobinda.nandi.public@gmail.com",
+    "url": "https://inandi.github.io/portfolio/index.html"
+  },
+  "icon": "media/logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iNandi/bolt"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "bolts.runScripts",
+        "title": "BoltS: Run script"
+      }
+    ],
+    "configuration": {
+      "title": "BoltS",
+      "properties": {
+        "bolts.scripts": {
+          "type": "array",
+          "default": [],
+          "description": "Scripts to show in the BoltS menu. Use alias for the display name and path for the script location (e.g. ./scripts/deploy.sh or ~/scripts/backup.sh).",
+          "items": {
+            "type": "object",
+            "required": ["alias", "path"],
+            "properties": {
+              "alias": {
+                "type": "string",
+                "description": "Display name shown in the menu (e.g. \"Reset DB\", \"Deploy\")"
+              },
+              "path": {
+                "type": "string",
+                "description": "Path to the script. Use ./ for workspace-relative, ~ for home, or / for absolute."
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "typescript": "^5.3.0"
+  }
+}
