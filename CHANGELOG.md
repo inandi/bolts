@@ -1,4 +1,4 @@
-# Release v2.1.3 - 2026-03-02
+# Release v2.1.4 - 2026-03-02
 
 ## New Features
 - **Config scope**: Choose where to read scripts — effective (workspace overrides user), user (global), or workspace (project). Setting: `bolts.configScope`.
