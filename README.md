@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>BoltS [Beta/wave-2]</h1>
+  <h1>BoltS [Beta]</h1>
   <p><strong>The Lightning-Fast Script Launcher</strong></p>
 </div>
 
@@ -58,13 +58,6 @@ Configure scripts in **BoltS: Scripts** (`bolts.scripts`). Each entry has:
 - **path** – Path to the script using the rules above
 
 If the resolved path does not exist, BoltS shows an error and does not run the script.
-
-## Development
-
-```bash
-npm install
-npm run compile
-```
 
 Press **F5** to launch the Extension Development Host.
 

@@ -2,7 +2,7 @@
   "name": "bolts",
   "displayName": "BoltS",
   "description": "Lightning-fast script launcher. Pin a Script Menu to the status bar for one-click access to your scripts.",
-  "version": "1.1.5",
+  "version": "2.1.1",
   "publisher": "iNandi",
   "author": {
     "name": "Gobinda Nandi",
@@ -27,13 +27,56 @@
   "contributes": {
     "commands": [
       {
+        "command": "bolts.openMenu",
+        "title": "BoltS: Open menu (run / add / manage)"
+      },
+      {
         "command": "bolts.runScripts",
         "title": "BoltS: Run script"
+      },
+      {
+        "command": "bolts.addScript",
+        "title": "BoltS: Add script"
+      },
+      {
+        "command": "bolts.manageScripts",
+        "title": "BoltS: Manage scripts (edit/delete)"
       }
     ],
     "configuration": {
       "title": "BoltS",
       "properties": {
+        "bolts.configScope": {
+          "type": "string",
+          "enum": ["effective", "user", "workspace"],
+          "enumDescriptions": [
+            "Use effective config (workspace overrides user settings)",
+            "Use only global (user) settings",
+            "Use only workspace (project) settings"
+          ],
+          "default": "effective",
+          "description": "Where to read scripts from: global (user), project (workspace), or effective (workspace overrides user)."
+        },
+        "bolts.defaultShell": {
+          "type": "string",
+          "enum": ["os", "powershell", "cmd", "bash", "gitbash", "wsl", "sh"],
+          "enumDescriptions": [
+            "Auto: PowerShell on Windows, bash on Linux/macOS",
+            "PowerShell (Windows)",
+            "Command Prompt (cmd.exe)",
+            "Bash",
+            "Git Bash (Windows)",
+            "WSL (Windows Subsystem for Linux)",
+            "sh (POSIX shell)"
+          ],
+          "default": "os",
+          "description": "Default shell/terminal to run scripts in when a script does not specify its own. Use \"os\" for automatic per-OS choice."
+        },
+        "bolts.wslDistro": {
+          "type": "string",
+          "default": "",
+          "description": "When using WSL shell, run in this distro (e.g. \"Ubuntu\", \"Ubuntu-22.04\"). Leave empty for default distro. Windows only."
+        },
         "bolts.scripts": {
           "type": "array",
           "default": [],
@@ -49,6 +92,42 @@
               "path": {
                 "type": "string",
                 "description": "Path to the script. Use ./ for workspace-relative, ~ for home, or / for absolute."
+              },
+              "args": {
+                "type": "string",
+                "description": "Optional arguments passed to the script (e.g. \"--ABCD 1\" or \"--env prod\")."
+              },
+              "shell": {
+                "type": "string",
+                "enum": ["os", "powershell", "cmd", "bash", "gitbash", "wsl", "sh"],
+                "description": "Which shell/terminal to run this script in. Omit or \"os\" to use the default (bolts.defaultShell)."
+              },
+              "windows": {
+                "type": "object",
+                "description": "Override path, args, or shell when running on Windows.",
+                "properties": {
+                  "path": { "type": "string" },
+                  "args": { "type": "string" },
+                  "shell": { "type": "string", "enum": ["os", "powershell", "cmd", "bash", "gitbash", "wsl", "sh"] }
+                }
+              },
+              "linux": {
+                "type": "object",
+                "description": "Override path, args, or shell when running on Linux.",
+                "properties": {
+                  "path": { "type": "string" },
+                  "args": { "type": "string" },
+                  "shell": { "type": "string", "enum": ["os", "powershell", "cmd", "bash", "gitbash", "wsl", "sh"] }
+                }
+              },
+              "darwin": {
+                "type": "object",
+                "description": "Override path, args, or shell when running on macOS.",
+                "properties": {
+                  "path": { "type": "string" },
+                  "args": { "type": "string" },
+                  "shell": { "type": "string", "enum": ["os", "powershell", "cmd", "bash", "gitbash", "wsl", "sh"] }
+                }
               }
             }
           }
