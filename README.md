@@ -17,6 +17,9 @@ BoltS is a VS Code extension that gives you one-click access to your shell scrip
 - **Path Flexibility**: Paths can be workspace-relative (`./scripts/...`), home-relative (`~/scripts/...`), or absolute
 - **Visible Output**: Scripts run in the integrated terminal so you see output and can interact if the script prompts for input
 - **Searchable Menu**: Quick Pick lets you type to filter scripts by alias
+- **Configurable Scope**: Choose whether BoltS reads scripts from global (user), project (workspace), or effective (workspace overrides user) settings
+- **Per-Script Shell & Args**: Give each script its own arguments and preferred shell (PowerShell, CMD, Bash, Git Bash, WSL, or sh)
+- **OS-Aware Behavior**: Override path, args, or shell per OS so one alias can behave differently on Windows, macOS, and Linux
 
 ## Getting Started
 
@@ -42,6 +45,13 @@ BoltS is a VS Code extension that gives you one-click access to your shell scrip
 3. **Click the BoltS icon** (⚡) in the status bar
 4. **Pick a script** from the Quick Pick list—it runs in a new **BoltS** terminal
 
+### Commands
+
+- **BoltS: Open menu (run / add / manage)** – Open the unified BoltS menu from the Command Palette
+- **BoltS: Run script** – Show the script picker directly
+- **BoltS: Add script** – Add a new script via a guided UI, choosing where to save it (User or Workspace)
+- **BoltS: Manage scripts (edit/delete)** – Edit or delete existing scripts per scope (user or workspace)
+
 ## How It Works
 
 ### Path Resolution
@@ -52,19 +62,15 @@ BoltS is a VS Code extension that gives you one-click access to your shell scrip
 
 ### Settings
 
-Configure scripts in **BoltS: Scripts** (`bolts.scripts`). Each entry has:
+Configure scripts in **BoltS: Scripts** (`bolts.scripts`). Each entry can have:
 
 - **alias** – Label shown in the menu (e.g. "Reset DB", "Deploy")
 - **path** – Path to the script using the rules above
+- **args** – Optional arguments passed to the script (e.g. `--env prod`)
+- **shell** – Optional shell/terminal to run this script in (falls back to `bolts.defaultShell` when omitted)
+- **windows / linux / darwin** – Optional per-OS overrides for `path`, `args`, and `shell`
 
 If the resolved path does not exist, BoltS shows an error and does not run the script.
-
-## Development
-
-```bash
-npm install
-npm run compile
-```
 
 Press **F5** to launch the Extension Development Host.
 
@@ -78,7 +84,7 @@ If BoltS helps your workflow, you can support the project (no pressure):
 
 - **Overview**: See [docs/OVERVIEW.md](docs/OVERVIEW.md) for the full spec and development overview
 - **Issues**: Found a bug or have an idea? Open an issue on GitHub
-- **Repository**: [github.com/iNandi/bolt](https://github.com/iNandi/bolt)
+- **Repository**: [github.com/iNandi/bolts](https://github.com/iNandi/bolts)
 
 ## License
 
