@@ -1,3 +1,11 @@
+# Release v3.1.1 - 2026-04-05
+
+## Improvements
+- Extension marked as **preview** in the manifest (`preview: true`) so the Marketplace shows the Preview badge and signals the product is still evolving.
+- **Logo** image updated in the `media` directory.
+
+---
+
 # Release v2.1.5 - 2026-03-03
 
 ## New Features
