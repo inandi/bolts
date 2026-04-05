@@ -2,7 +2,8 @@
   "name": "bolts",
   "displayName": "BoltS",
   "description": "Lightning-fast script launcher. Pin a Script Menu to the status bar for one-click access to your scripts.",
-  "version": "3.0.0",
+  "version": "3.1.1",
+  "preview": true,
   "publisher": "iNandi",
   "author": {
     "name": "Gobinda Nandi",
