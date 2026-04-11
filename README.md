@@ -92,4 +92,4 @@ This project is licensed under the MIT License.
 
 ---
 
-**Made with ❤️ by Gobinda Nandi**
+**Made with ❤️ by [Gobinda Nandi](https://x.com/iamGobinda)**
