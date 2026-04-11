@@ -1,17 +1,2 @@
-## New Features
-- NA
-
 ## Improvements
-- NA
-
-## Bug Fixes
-- NA
-
-## Deprecated Features
-- NA
-
-## Known Issues
-- NA
-
-## Acknowledgments
-- NA
+- **README**: footer credit now links **Gobinda Nandi** to the author’s profile on X (hyperlink instead of plain text).
