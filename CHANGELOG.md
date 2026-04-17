@@ -1,3 +1,18 @@
+# Release v3.1.2 - 2026-04-06
+
+## Improvements
+- **Release script** (`release.sh`): publishes Visual Studio Marketplace and Open VSX **independently** (each token optional, with a clear note when one registry is skipped); uses **`npx`** for `@vscode/vsce` and **`ovsx`**; verifies `package.json` matches the release argument **before** tagging; exits with a non-zero status only when a publish step was run and failed (skipping publish when secrets are absent still completes successfully after git steps).
+
+---
+
+# Release v3.1.1 - 2026-04-05
+
+## Improvements
+- Extension marked as **preview** in the manifest (`preview: true`) so the Marketplace shows the Preview badge and signals the product is still evolving.
+- **Logo** image updated in the `media` directory.
+
+---
+
 # Release v2.1.5 - 2026-03-03
 
 ## New Features

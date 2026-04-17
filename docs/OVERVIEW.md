@@ -17,11 +17,11 @@ BoltS is a VS Code / Cursor extension that pins a script launcher to the status 
 
 ```mermaid
 flowchart LR
-  U[User] -->|click $(zap) BoltS| SB[Status bar item]
-  SB -->|command bolts.openMenu| Menu[Main menu]
-  Menu -->|Run script| Run[bolts.runScripts]
-  Menu -->|Add script| Add[bolts.addScript]
-  Menu -->|Manage scripts| Manage[bolts.manageScripts]
+  U[User] -->|"click BoltS status item"| SB["Status bar item"]
+  SB -->|"command bolts.openMenu"| Menu["Main menu"]
+  Menu -->|"Run script"| Run["bolts.runScripts"]
+  Menu -->|"Add script"| Add["bolts.addScript"]
+  Menu -->|"Manage scripts"| Manage["bolts.manageScripts"]
 ```
 
 1. User clicks **BoltS** in the status bar.

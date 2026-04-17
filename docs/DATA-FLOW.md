@@ -80,8 +80,8 @@ When a script uses the `wsl` shell:
 ```mermaid
 flowchart LR
   R[Resolved Windows path] --> Conv[Convert to WSL path]
-  Conv --> Term[WSL terminal\n(wsl.exe, optional distro)]
-  Term --> Run[cd script dir\n+ run script]
+  Conv --> Term["WSL terminal<br/>(wsl.exe, optional distro)"]
+  Term --> Run["cd script dir<br/>+ run script"]
 ```
 
 - The script path and working directory are converted from Windows style to WSL style.
