@@ -1,6 +1,11 @@
 <div align="center">
   <h1>BoltS [Beta]</h1>
   <p><strong>The Lightning-Fast Script Launcher</strong></p>
+  <p>
+    <img alt="Version" src="https://img.shields.io/badge/Version-3.1.3-green" />
+    <img alt="Updated On" src="https://img.shields.io/badge/Updated%20On-April%202026-blue" />
+    <img alt="Released On" src="https://img.shields.io/badge/Released%20On-March%202026-orange" />
+  </p>
 </div>
 
 Tired of memorizing script paths or switching to a terminal to run them? BoltS pins a Script Menu to your status bar—one click, pick a script by alias, and it runs in the integrated terminal.
