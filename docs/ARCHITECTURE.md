@@ -27,12 +27,12 @@ This document describes how the BoltS extension is structured internally and how
 ```mermaid
 flowchart LR
   VS[VS Code host] --> Ext[extension.ts]
-  Ext --> Cmds[Commands\nbolts.*]
+  Ext --> Cmds["Commands<br/>bolts.*"]
   Ext --> SB[Status bar item]
-  Cmds --> Config[Configuration layer\n(bolts.* settings)]
-  Cmds --> Resolver[Script resolution\n(path + shell)]
-  Resolver --> Exec[Execution layer\n(terminal + command)]
-  Exec --> Term["VS Code terminal\n(name: BoltS)"]
+  Cmds --> Config["Configuration layer<br/>(bolts.* settings)"]
+  Cmds --> Resolver["Script resolution<br/>(path + shell)"]
+  Resolver --> Exec["Execution layer<br/>(terminal + command)"]
+  Exec --> Term["VS Code terminal<br/>(name: BoltS)"]
 ```
 
 ---
